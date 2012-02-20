@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <style type="text/css">
+        .enfasis { font-weight: bold; }
+    </style>
+    <script>
+        // No se ejecutará hasta que todo el DOM este completamente cargado     
+        $(document).ready(function(){
+            $('li:first-child').addClass('enfasis');    
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>hello</li>
+        <li>hello 2</li>
+        <li>hello 3</li>
+    </ul>
+</body>
+</html>
