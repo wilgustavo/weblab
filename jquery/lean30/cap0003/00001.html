@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title></title>
+    <style type="text/css">
+        li { color:black; }
+        .enfasis { font-weight: bold; }
+        .subrayado{ text-decoration: underline; }
+        .tachado{ text-decoration: line-through; }
+        .mayuscula{ text-transform: uppercase; }
+        .resaltado{ background-color: yellow; }
+        .borde{ border:1px dotted orange; }
+        .red { color:red; }
+        .green { color:green; }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script>
+        $(function(){
+            // Busca solo los elementos 'li' que sean hijos directos.
+            $('ul.elemento').children('li').addClass('red');
+
+            // Busca todos los elementos 'li' que son descendientes.
+            $('ul.animal').find('li').addClass('green');
+
+            // Busca el primer hijo 
+            $('ul.elemento').children('li:first').addClass('enfasis');
+
+            // Método 'first' para obtener el primer elemento. 
+            $('ul.elemento').children('li').first().addClass('subrayado');
+
+            // Busca el segundo hijo ( comienza a numerar con el 1 )
+            $('ul.elemento').children('li:nth-child(2)').addClass('tachado');
+
+            // Busca el segundo hijo pero con el método eq 
+            // (comienza a numerar desde el 0 ) 
+            $('ul.elemento').children('li').eq(1).addClass('mayuscula');
+
+            // Busca el segundo hijo , a partir del primero y con el método next. 
+            $('ul.elemento').children('li').eq(0).next().addClass('resaltado');
+
+            // Busca el segundo hijo, a partir del tercero encadenando 
+            // el método prev
+            $('ul.elemento').children('li').eq(2).prev().addClass('borde');
+        });
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1></h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <ul class="elemento">Elementos
+            <li>alcalinos</li>
+            <li>halógenos</li>
+            <li>metales</li>
+            <li>gases nobles
+                <ul>
+                    <li>helio</li>
+                    <li>neón</li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="animal">Animales
+            <li>aves</li>
+            <li>mamíferos</li>
+                <ul>
+                    <li>gato</li>
+                    <li>perro</li>
+                </ul>
+            <li>peces</li>
+        </ul>
+    </div>
+</body>
+</html>
