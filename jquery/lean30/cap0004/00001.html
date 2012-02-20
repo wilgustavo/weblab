@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>Eventos</title>
+    <link rel="stylesheet" href="dia.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+</head>
+<body>
+    <h1>Mi sitio web</h1>
+    <button data-file="dia">Día</button>
+    <button data-file="noche">Noche</button>
+
+    <script>
+        (function(){
+            var link = $('link');
+
+            $('button').click(function(){
+                var $this = $(this),
+                    stylesheet = $this.data('file');
+
+                link.attr('href' , stylesheet + '.css');
+
+                
+                $this
+                    .siblings('button')
+                    .removeAttr('disabled')
+                    .end()
+                    .attr('disabled' , 'disabled' );
+            });        
+        })();        
+    </script>
+</body>
+</html>
