@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>Eventos</title>
+    <link rel="stylesheet" href="style01.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+</head>
+<body>
+     <dl>
+         <dt>Primer puesto</dt>
+         <dd>Alain Prost</dd>
+         <dt>Segundo puesto</dt>
+         <dd>Keke Rosberg</dd>
+         <dt>Tercer puesto</dt>
+         <dd>Ayrton Senna</dd>
+         <dt>Cuarto puesto</dt>
+         <dd>Nigel Mansell</dd>
+         <dt>Quinto puesto</dt>
+         <dd>René Arnoux</dd>
+     </dl>
+</body>
+
+<script>
+    (function() {
+        $('dd').filter(':nth-child(n+4)').hide();   
+        $('dl').on('mouseenter' , 'dt' , function(){
+            $(this)
+                .next()
+                    .slideDown(200)
+                    .siblings('dd')
+                        .slideUp(200);
+        });
+    })();
+</script>
+</html>
