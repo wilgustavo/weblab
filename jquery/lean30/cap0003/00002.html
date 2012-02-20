@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>Navegar por el DOM</title>
+    <style type="text/css">
+        .resaltado{ background-color: yellow; 
+                    border:1px dotted orange; }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script>
+        $(function(){
+            // Solo busca el padre inmediato.
+            $('#Ar').parent('ul').addClass('resaltado');
+            // Busca en todos los ancestros desde la raiz 
+            $('#gato').parents('ul').addClass('resaltado');
+            // Busca el elemento mas próximo desde el seleccionado 
+            // hasta la raiz  del DOM
+            $('#ma2').closest('.inst').addClass('resaltado');
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mi sitio web</h1>
+        <ul>Elementos
+            <li>halógenos</li>
+            <li>gases nobles</li>
+            <ul>
+                <li id="He">helio</li>
+                <li id="Ne">neón</li>
+                <li id="Ar">argón</li>
+                <li id="Xe">xenón</li>
+                <li id="Rn">radón</li>
+            </ul>
+            <li>metales</li>
+            <li>alcalinos</li>
+        </ul>
+        <ul>Animales
+            <li>aves</li>
+            <li>mamíferos</li>
+                <ul>
+                    <li id="gato">gato</li>
+                    <li id="perro">perro</li>
+                    <li id="oso">oso</li>
+                </ul>
+            <li>peces</li>
+        </ul>
+        <ul>Instrumentos
+            <li>viento</li>
+                <ul>
+                    <li>metal</li>
+                        <ul class="inst">
+                            <li id="me1">trompeta</li>
+                            <li id="me2">tuba</li>
+                        </ul>
+                    <li>madera</li>
+                        <ul class="inst">
+                            <li id="ma1">flauta</li>
+                            <li id="ma2">saxofón</li>
+                            <li id="ma3">clarinete</li>
+                        </ul>
+                </ul>
+            <li>cuerda</li>
+            <li>percusión</li>
+        </ul>
+    </div>
+</body>
+</html>
