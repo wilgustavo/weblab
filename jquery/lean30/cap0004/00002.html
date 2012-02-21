@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>Eventos y css</title>
+    <link rel="stylesheet" href="colores.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+</head>
+<body>
+<p>Seleccione un color:</p>
+<div>
+    <div class="color" id="steelblue"></div>
+    <div class="color" id="yellowgreen"></div>
+    <div class="color" id="tomato"></div>
+    <div class="color" id="lemonchiffon"></div>
+</div>
+<div class="texto"></div>
+
+<script>
+    (function(){
+        $('.color').on('click', function(){
+            var selcolor = $(this).css('background-color');
+            $(this).addClass('conborde')
+                       .siblings('.color')
+                       .removeClass('conborde');
+            $('.texto').text('El color seleccionado es ' + selcolor );
+        });
+    })();
+</script>
+</body>
+</html>

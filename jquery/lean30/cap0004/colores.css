@@ -1,0 +1,31 @@
+.color {
+    width: 60px;
+    height: 60px;
+    margin: 5px;    
+    float: left;
+    border: 3px solid white;
+}
+
+#steelblue {
+    background-color: steelblue;
+}
+
+#yellowgreen {
+    background-color: yellowgreen;
+}
+
+#tomato {
+    background-color: tomato;
+}
+
+#lemonchiffon {
+    background-color: lemonchiffon;
+}
+
+.conborde {
+    border: 3px solid black;
+}
+
+.texto {
+    clear: both;
+}
