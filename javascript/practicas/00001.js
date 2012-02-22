@@ -1,1 +1,4 @@
-console.log("Hola mundo");
+
+if ( typeof console !== 'undefined' ) {
+    console.log('Hola mundo');    
+}
