@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+	<title>Eventos y Checkboxes</title>
+	<link rel="stylesheet" href="ckecks.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+</head>
+<body>
+	<form>
+			<p>
+				<input type="checkbox" id="todo" />
+				<label for="todo">Seleccionar todo</label>
+			</p>
+			<p class="sabores">
+				<input type="checkbox" id="chocolate" />
+				<label for="chocolate">chocolate</label>
+				<input type="checkbox" id="vainilla" />
+				<label for="vainilla">vainilla</label>
+				<input type="checkbox" id="dulce"/>
+				<label for="dulce">dulce de leche</label> 
+				<input type="checkbox" id="frutilla"/>
+				<label for="frutilla">frutilla</label> 
+				<input type="checkbox" id="crema"/>
+				<label for="crema">crema americana</label> 
+				<input type="checkbox" id="limon"/>
+				<label for="limon">limón</label> 
+			</p>
+	</form>
+	<script>
+		(function(){
+			$('#todo').on('click' , function(){
+				var thisChecked = $(this).is(':checked');
+				$('.sabores').find(':checkbox').attr('checked' , thisChecked );
+			});
+		})();
+	</script>
+</body>
+</html>

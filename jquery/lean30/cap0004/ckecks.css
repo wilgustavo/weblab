@@ -1,0 +1,16 @@
+p {
+	margin-bottom: 20px;
+	margin-left: 80px;
+	clear: both;
+	float: none;
+}	
+p.sabores input {
+	clear: left;
+	float: left;
+}
+p.sabores label {
+	display: block;
+	float: left;
+	margin-left: 10px;
+	width: 200px;
+}
