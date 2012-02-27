@@ -1,7 +1,7 @@
 
 // No importa donde se defina una función con nombre. 
 // Pero hay que tener cuidado donde se define una anonima , que no puede hacerse
-// uso hasta que la línea de ejecución pose por ella.
+// uso hasta que la línea de ejecución pase por ella.
 // Ver Secrets of the javascript Ninja pag. 8
 
 var assert = require('assert');
