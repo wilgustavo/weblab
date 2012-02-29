@@ -4,12 +4,10 @@
 // uso hasta que la línea de ejecución pase por ella.
 // Ver Secrets of the javascript Ninja pag. 8
 
-var assert = require('assert');
-
-assert( typeof conNombre === 'function' , 'Se puede definir en cualquier lado' );
-assert( typeof anonima === 'undefined' , 'Todavía no se puede usar' );
+console.assert( typeof conNombre === 'function' , 'Se puede definir en cualquier lado' );
+console.assert( typeof anonima === 'undefined' , 'Todavía no se puede usar' );
 
 function conNombre() { return true; };
 anonima = function(){ return true; };
 
-assert( typeof anonima === 'function' , 'Ahora se puede usar' );
+console.assert( typeof anonima === 'function' , 'Ahora se puede usar' );
