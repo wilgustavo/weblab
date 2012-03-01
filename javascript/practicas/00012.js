@@ -26,4 +26,9 @@ function mult_por2( a , b , c , callback ){
 }
 
 console.assert( [21,41,61].compare( mult_por2( 10 , 20 , 30 , mas_uno ) ) ,
-           "mas_uno con callback" );
+           "mult_por2 con callback" );
+
+console.assert( [30,50,70].compare( mult_por2( 10 , 20 , 30 , 
+                                    function( e ){ return e + 10; } ) ) , 
+           "mult_por2 con callback anonimo");
+
