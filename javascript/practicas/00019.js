@@ -1,4 +1,3 @@
-
 // Suffle an array
 
 Array.prototype.swap = function(pos1, pos2){
@@ -10,6 +9,7 @@ Array.prototype.swap = function(pos1, pos2){
 
 // Fisher–Yates shuffle
 Array.prototype.shuffle = function() {
+    var i = this.length;
     for( var i = 0 ; i < this.length ; i++ ) {
         var randPos = Math.floor( Math.random() * this.length );
         this.swap(i,randPos);
