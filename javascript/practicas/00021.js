@@ -1,3 +1,5 @@
+// Recursive searching
+
 function findSequence(goal){
     function find(start, history){
         if ( start === goal ) {
