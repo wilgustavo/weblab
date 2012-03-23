@@ -9,17 +9,39 @@ function inherit(p){
     return new f();
 }
 
-var recObj = {
+var original = {
     x: 50 , 
     y: 102 
 };
 
-var otrObj = inherit(recObj);
+var copia = inherit(original);
 
-console.assert( undefined !== otrObj.x , 'Copiado atributo x' );
-console.assert( recObj.x ===  otrObj.x , 'Copiado atributo x' );
+console.assert( undefined !== copia.x , 'Copiado atributo x' );
+console.assert( original.x ===  copia.x , 'Copiado atributo x' );
 
-console.assert( undefined !== otrObj.y , 'Copiado atributo y' );
-console.assert( recObj.y ===  otrObj.y , 'Copiado atributo y' );
+console.assert( undefined !== copia.y , 'Copiado atributo y' );
+console.assert( original.y ===  copia.y , 'Copiado atributo y' );
 
-console.assert( recObj !== otrObj , 'No es el mismo objeto');
+original.x = 75;
+console.assert( 75 === original.x , 'Cambiando atributo del original');
+console.assert( original.x ===  copia.x , 'Cambia tambien la copia' );
+
+original.z = 315;
+console.assert( 315 === original.z , 'Agregando atributo al original');
+console.assert( undefined !== copia.z , 'Tambien se agrega a la copia' );
+console.assert( original.z ===  copia.z , 'Tienen el mismo valor' );
+
+copia.y = 199;
+console.assert( 199 === copia.y , 'Cambiando atributo de la copia');
+console.assert( original.y !== copia.y , 'El cambio no afecta al original' );
+console.assert( 102 === original.y , 'El cambio no afecta al original' );
+
+original.y = 114;
+console.assert( 114 === original.y , 'Cambiando atributo del original');
+console.assert( original.y !== copia.y , 
+    'El cambio no afecta al la copia que habia cambiado' );
+console.assert( 199 === copia.y , 'No lo cambia porque ya se ha cambiado');
+
+
+
+
