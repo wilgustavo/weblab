@@ -23,6 +23,7 @@ var pais = {
 // Redefinir funcion implementada en 00027.js 
 // para quitar artibutos no propios y metodos. 
 var getKeys = function(obj){
+    if (typeof obj !== "object") throw TypeError(); 
     var keys = [];
     for( var key in obj ) {
         if( !obj.hasOwnProperty(key) ) continue;
